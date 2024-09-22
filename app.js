@@ -15,6 +15,12 @@ document.getElementById('searchButton').addEventListener('click', function() {
         });
 });
 
+document.getElementById('resetButton').addEventListener('click', function() {
+    document.getElementById('search').value = '';
+    document.getElementById('result').innerHTML = '';
+    document.getElementById('map').innerHTML = '';
+});
+
 function showMap(lat, lon) {
     const map = L.map('map').setView([lat, lon], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
